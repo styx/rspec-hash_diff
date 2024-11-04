@@ -5,7 +5,7 @@ module RSpec
     class Differ
       def diff_as_object(actual, expected)
         if actual.instance_of?(Hash) && expected.instance_of?(Hash)
-          diff = HashDiff.diff(actual, expected, delimiter: ":")
+          diff = ::HashDiff.diff(actual, expected, delimiter: ":")
           diff_str = diff.map do |diff_line|
             key = diff_line[1].split(":")
             case diff_line[0]
